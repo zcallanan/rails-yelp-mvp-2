@@ -1,0 +1,17 @@
+.restaurants {
+  display: flex;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+li {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  font-size: 26px;
+}
