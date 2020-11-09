@@ -1,0 +1,24 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <ul>
+    <li><%= @restaurant.address %></li>
+    <li><%= @restaurant.phone_number %></li>
+    <li><%= @restaurant.category.capitalize %></li>
+  </ul>
+  <div class="row justify-content-left">
+    <div class="col-2">
+      <h2>Reviews</h2>
+    </div>
+    <div class="col-2">
+      <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "text-decoration-none inline-block btn btn-outline-primary"  %>
+    </div>
+  </div>
+
+  <ul>
+    <% @reviews.each do |review| %>
+      <% if review.restaurant_id == @restaurant.id  %>
+        <li>Rating: <%= review.rating %> | <%= review.content %></li>
+      <% end  %>
+    <% end  %>
+  </ul>
+</div>
